@@ -1,0 +1,7 @@
+[user]
+	email = abelgit.manly856@aleeas.com
+	name = abelsouzacosta
+[init]
+	defaultBranch = main
+[core]
+	editor = vim

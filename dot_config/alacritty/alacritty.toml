@@ -1,0 +1,24 @@
+import = ["~/.config/alacritty/hardhacker.toml"]
+
+[window]
+padding.x = 2
+padding.y = 2
+decorations = "None"
+
+[font]
+normal.family = "Hurmit Nerd Font"
+bold.family = "Hurmit Nerd Font"
+size = 8
+
+[scrolling]
+history = 100000
+multiplier = 10
+
+[mouse]
+hide_when_typing = true
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style = "Underline"
