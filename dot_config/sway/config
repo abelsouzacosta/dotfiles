@@ -1,0 +1,89 @@
+# Set mod key
+set $mod Mod4
+
+# Set default terminal
+set $term alacritty
+
+# Set fonts
+font pango: Hurmit Nerd Font 9
+
+# Set borders
+default_border none
+
+# Set gaps
+gaps inner 2
+gaps outer 5
+
+workspace 1
+exec firefox
+
+workspace 2
+exec $term
+
+# Set common keybindings
+bindsym $mod+Return exec $term
+bindsym $mod+x kill
+bindsym $mod+d exec wofi --show drun
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+# Set focus keybindings
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+
+# Set move keybindings
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Down move down
+
+# Set keys for workspaces
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3 
+bindsym $mod+4 workspace 4 
+bindsym $mod+5 workspace 5 
+bindsym $mod+6 workspace 6 
+bindsym $mod+7 workspace 7 
+bindsym $mod+8 workspace 8 
+bindsym $mod+9 workspace 9 
+bindsym $mod+0 workspace 10 
+
+# Set workspace movimentation keybindings
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2 
+bindsym $mod+Shift+3 move container to workspace number 3 
+bindsym $mod+Shift+4 move container to workspace number 4 
+bindsym $mod+Shift+5 move container to workspace number 5 
+bindsym $mod+Shift+6 move container to workspace number 6 
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8  
+bindsym $mod+Shift+9 move container to workspace number 9 
+bindsym $mod+Shift+0 move container to workspace number 10 
+
+# Set layout keybindings
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+f fullscreen
+
+# Keyboard Layour Configuration
+input "type:keyboard" {
+	xkb_layout br
+	xkb_variant abnt2
+	xkb_model abnt2
+}
+
+input "type:touchpad" {
+	tap enabled
+	natural_scroll enabled
+}
+
+bar {
+	swaybar_command waybar
+}
+
+output '*' bg ~/Pictures/wallpaper.jpg fill
+
+include  /etc/sway/config.d/*
