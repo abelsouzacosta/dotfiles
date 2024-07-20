@@ -1,0 +1,127 @@
+/*
+ * Catppuccin colorscheme for rofi
+ * User: abelsouzacosta
+ */
+
+* {
+    surface0: #313244;
+    mauve: #cba6f7; 
+    subtext1: #bac2de; 
+    sapphire: #74c7ec;
+    font: "Hurmit Nerd Font 9";
+    background-color: @surface0;
+    border: 0px;
+    blue: #89b4fa;
+    crust: #11111b;
+    transparent: rgba(46,52,64,0);
+}
+
+window {
+    width: 700;
+    orientation: horizontal;
+    location: center;
+    anchor: center;
+    transparency: "screenshot";
+    border-color: @transparent;   
+    border: 0px;
+    border-radius: 6px;
+    spacing: 0;
+    children: [ mainbox ];
+}
+
+mainbox {
+    spacing: 0;
+    children: [ inputbar, message, listview ];
+}
+
+inputbar {
+    color: @blue;
+    padding: 11px;
+    border: 3px 3px 2px 3px;
+    border-color: @subtext1;
+    border-radius: 6px 6px 0px 0px;
+}
+
+message {
+    padding: 0;
+    border-color: @subtext1;
+    border: 0px 1px 1px 1px;
+}
+
+entry, prompt, case-indicator {
+    text-font: inherit;
+    text-color: inherit;
+}
+
+entry {
+    cursor: pointer;
+}
+
+prompt {
+    margin: 0px 5px 0px 0px;
+}
+
+listview {
+    layout: vertical;
+    padding: 8px;
+    lines: 12;
+    columns: 1;
+    border: 0px 3px 3px 3px; 
+    border-radius: 0px 0px 6px 6px;
+    border-color: @subtext1;
+    dynamic: false;
+}
+
+element {
+    padding: 2px;
+    vertical-align: 1;
+    color: @blue;
+    font: inherit;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+element selected.normal {
+    color: @crust;
+    background-color: @mauve;
+}
+
+element normal active {
+    background-color: @mauve;
+    color: @crust;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+element normal urgent {
+    background-color: @subtext1;
+}
+
+element selected active {
+    background: @mauve;
+    foreground: @surface0;
+}
+
+button {
+    padding: 6px;
+    color: @subtext1;
+    horizonatal-align: 0.5;
+    border: 2px 0px 2px 2px;
+    border-radius: 4px 0px 0px 4px;
+    border-color: @subtext1;
+}
+
+button selected normal {
+    border: 2px 0px 2px 2px;
+    border-color: @subtext1;
+}
+
+scrollbar {
+    enabled: true;
+} 

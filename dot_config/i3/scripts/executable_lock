@@ -1,0 +1,64 @@
+
+#!/bin/sh
+
+# This snippet uses i3lock-color as the default lock screen app
+# it also uses catppuccin color palette
+
+alpha='dd'
+background='#282a36'
+selection='#44475a'
+comment='#6272a4'
+
+yellow='#f9e2af'
+peach='#fab387'
+red='#f38ba8'
+pink='#f5c2e7'
+blue='#89b4fa'
+sapphire='#74c7ec'
+green='#a6e3a1'
+lavender='#b4befe'
+
+i3lock \
+  --insidever-color=$selection$alpha \
+  --insidewrong-color=$selection$alpha \
+  --inside-color=$selection$alpha \
+  --ringver-color=$green$alpha \
+  --ringwrong-color=$red$alpha \
+  --ringver-color=$green$alpha \
+  --ringwrong-color=$red$alpha \
+  --ring-color=$lavender$alpha \
+  --line-uses-ring \
+  --keyhl-color=$pink$alpha \
+  --bshl-color=$peach$alpha \
+  --separator-color=$selection$alpha \
+  --verif-color=$green \
+  --wrong-color=$red \
+  --modif-color=$red \
+  --layout-color=$lavender \
+  --date-color=$lavender \
+  --time-color=$lavender \
+  --screen 1 \
+  --blur 1 \
+  --clock \
+  --indicator \
+  --time-str="%H:%M" \
+  --date-str="%e %B %Y" \
+  --verif-text="Checking..." \
+  --wrong-text="Fail!!!" \
+  --noinput="No Input" \
+  --lock-text="Locking..." \
+  --lockfailed="Lock Failed" \
+  --radius=110 \
+  --ring-width=7 \
+  --pass-media-keys \
+  --pass-screen-keys \
+  --pass-volume-keys \
+  --time-font="Hurmit Nerd Font" \
+  --date-font="Hurmit Nerd Font" \
+  --layout-font="Hurmit Nerd Font" \
+  --verif-font="Hurmit Nerd Font" \
+  --wrong-font="Hurmit Nerd Font" \
+
+# These last five lines are commented because they concern the font you want to use.
+# JetBrainsMono Nerd Font is the font that was used in the screenshot.
+# To specify a favorite font, just uncomment the five lines and replace the parameter with the font you prefer.

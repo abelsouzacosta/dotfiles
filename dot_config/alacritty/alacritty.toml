@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/nord.toml"]
+import = ["~/.config/alacritty/catppuccin.toml"]
 
 [env]
 TERM = "xterm-256color"

@@ -1,0 +1,15 @@
+[manager]
+show_hidden = false
+show_symlink = true
+sort_by = "natural"
+linemode = "permissions"
+mouse_events = ["click", "scroll", "touch", "move", "drag"]
+
+[opener]
+play = [
+  { run = 'mpv "$@"', orphan = true }
+]
+edit = [
+	{ run = 'nvim "$@"', block = true },
+]
+
