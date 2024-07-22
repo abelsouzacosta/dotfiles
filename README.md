@@ -6,7 +6,7 @@ Arch Linux configuration files for my laptop
 - i3status-rust
 - bottom
 - kitty
-- LunarVim
+- AstroNvim
 - rofi
 - yazi
 - lazygit
