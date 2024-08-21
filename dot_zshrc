@@ -20,7 +20,8 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
-
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
 # Add in snippets downloaded from the oh my zsh plugins repository
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
@@ -72,7 +73,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
-alias vim='nvim'
 alias c='clear'
 
 # Shell integrations
@@ -88,3 +88,9 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 # Aliases
 alias md="mkdir -p"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/junior/.dart-cli-completion/zsh-config.zsh ]] && . /home/junior/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
