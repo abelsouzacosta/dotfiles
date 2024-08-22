@@ -94,3 +94,8 @@ alias md="mkdir -p"
 [[ -f /home/junior/.dart-cli-completion/zsh-config.zsh ]] && . /home/junior/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+pacfind () {
+   local package="$1"
+   echo "Search for $package: "
+  pacman -Ss "^$package$" 
+}
