@@ -53,31 +53,27 @@ tiling_drag modifier
 
 # start a terminal
 bindsym $mod+Return exec kitty
-bindsym $mod+Shift+Return exec kitty -e yazi
-
+# starts the terminal within a zellij session
+bindsym $mod+Shift+Return exec kitty -e zellij
 # kill focused window
 bindsym $mod+x kill
-
-# start dmenu (a program launcher)
+# start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $mod+z exec --no-startup-id rofi -show run 
-# A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
-# There also is i3-dmenu-desktop which only displays applications shipping a
-# .desktop file. It is a wrapper around dmenu, so you need that installed.
-# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
-
+# opens qutebrowser
+bindsym $mod+q exec qutebrowser
 # locks the screen
 bindsym $mod+Shift+l exec ~/.config/i3/scripts/lock
 
 # takes screenshot
 bindsym $mod+Shift+p exec flameshot gui
+# excute file manager yazi
+bindsym $mod+Shift+f exec exec kitty -e yazi
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -92,10 +88,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split horizontal
+bindsym $mod+Shift+h split horizontal
 
 # split in vertical orientation
-bindsym $mod+v split vertical
+bindsym $mod+Shift+v split vertical
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -223,7 +219,7 @@ client.background        $base
 # finds out, if available)
 bar {
         status_command /sbin/i3status-rs ~/.config/i3status-rs/config.toml
-	position top
+	position bottom
 	colors {
 	background         $crust
         statusline         $text
@@ -237,5 +233,5 @@ bar {
     }
 }
 
-exec --no-startup-id "setxkbmap -layout br,us -model pc105 grp:alt_caps_toggle"
+exec --no-startup-id "setxkbmap -layout br,us -model pc105"
 exec_always feh --bg-fill $wallpaper
