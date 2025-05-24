@@ -10,7 +10,7 @@ Arch Linux configuration files for my laptop
 - rofi
 - yazi
 - lazygit
-- tmux
+- zellij
 - sioyek
 - Starship
 
