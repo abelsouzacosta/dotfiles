@@ -21,4 +21,4 @@ vim.api.nvim_set_keymap("n", "<S-Tab>", ":bprevious<CR>", opts) -- Map Shift+Tab
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", opts) -- Map Ctrl+s to save file in normal mode
 vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>", opts) -- Map Ctrl+s to save file in insert mode
 vim.api.nvim_set_keymap("n", "<C-x>", ":bd<CR>", opts) -- Map Ctrl+x to close the current buffer
-
+vim.api.nvim_set_keymap("n", "<S-f>", ":FzfLua grep<CR>", opts) -- Map Ctrl+x to close the current buffer

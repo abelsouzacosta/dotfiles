@@ -1,11 +1,8 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.colorscheme.catppuccin" },
-  { import = "astrocommunity.colorscheme.nordic-nvim" },
-  { import = "astrocommunity.colorscheme.nord-nvim" },
-  { import = "astrocommunity.colorscheme.dracula-nvim" },
-  { import = "astrocommunity.colorscheme.iceberg-vim" },
-  { import = "astrocommunity.colorscheme.everforest" },
+  { import = "astrocommunity.bars-and-lines.lualine-nvim" },
+  { import = "astrocommunity.fuzzy-finder.fzf-lua" },
   { import = "astrocommunity.git.git-blame-nvim" },
-  { import = "astrocommunity.pack.full-dadbod" }
+  { import = "astrocommunity.pack.full-dadbod" },
 }
