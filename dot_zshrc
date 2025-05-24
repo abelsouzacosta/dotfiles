@@ -26,16 +26,7 @@ zinit light jeffreytse/zsh-vi-mode
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
-zinit snippet OMZP::command-not-found
 zinit snippet OMZP::taskwarrior
-zinit snippet OMZP::docker-compose
-zinit snippet OMZP::docker
-zinit snippet OMZP::asdf
-zinit snippet OMZP::poetry
-zinit snippet OMZP::poetry-env
-zinit snippet OMZP::npm
-zinit snippet OMZP::composer
-zinit snippet OMZP::rust
 zinit snippet OMZP::thefuck
 
 # Load completions
@@ -72,9 +63,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls --color'
-alias c='clear'
-
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
@@ -82,20 +70,45 @@ eval "$(zoxide init --cmd cd zsh)"
 # Adding python poetry
 export PATH="$HOME/.local/bin:$PATH"
 
-# Adding Fly.io
-export FLYCTL_INSTALL="/home/junior/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 # Aliases
 alias md="mkdir -p"
+alias cat='bat'
+alias ls='eza --icons'
+alias lslha='eza --icons --long --all'
+alias lslh='eza --icons --long'
+alias lst='eza --long --tree --level=3'
+alias lsd='eza --long --header --icons --git'
+alias z='zoxide'
+alias c='clear'
+alias rm="trash"
+alias zl="zellij"
+alias tlmgr="sudo /usr/local/texlive/2025/bin/x86_64-linux/tlmgr"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/junior/.dart-cli-completion/zsh-config.zsh ]] && . /home/junior/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+# helper functions
 pacfind () {
    local package="$1"
-   echo "Search for $package: "
-  pacman -Ss "^$package$" 
+   pacman -Ss "^$package$" 
+
+   if [[ $? -eq 1 ]]; then
+      yayfind "$package"
+   fi
 }
+
+yayfind() {
+   local package="$1"
+   yay -Ss "$package"
+}
+eval "$(~/.local/bin/mise activate zsh)"
+
+if [ -n "$KITTY_INSTALLATION_DIR" ]; then
+    source "$KITTY_INSTALLATION_DIR/shell-integration/zsh/.zshenv"
+fi
+
+export EDITOR="nvim"
+export PATH=/usr/local/texlive/2025/bin/x86_64-linux:$PATH
