@@ -233,5 +233,5 @@ bar {
     }
 }
 
-exec --no-startup-id "setxkbmap -layout br,us -model pc105"
+exec --no-startup-id "setxkbmap -layout br"
 exec_always feh --bg-fill $wallpaper
